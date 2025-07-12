@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="headerContainer">
+            <h1 class="heading">Employee Directory</h1>
+            <input type="search" id="searchInput" placeholder="Search employees by name or email..." />
+            <button type="button" class="filter-button">Filter</button>
+        </div>
+
+        <div class="action-container">
+            <div class="sort-page-card">
+                <div class="sort-card">
+                    <p class="sort-by">Sort By:</p>
+                    <select id="sortSelect" class="select-input">
+                        <option value="">Sort By</option>
+                        <option value="firstName">First Name</option>
+                        <option value="department">Department</option>
+                    </select>
+                </div>
+
+
+                <p class="sort-by">show: </p>
+                <select id="rowsPerPageSelect">
+                    <option value="10" selected>10 per page</option>
+                    <option value="25">25 per page</option>
+                    <option value="50">50 per page</option>
+                    <option value="100">100 per page</option>
+                </select>
+                <div id="paginationContainer" class="pagination-container"></div>
+
+
+
+            </div>
+
+            <button type="button" class="add-btn" id="addEmployeeBtn">Add Employees</button>
+
+        </div>
+        <div id="employeeFormContainer" class="form-container hidden">
+            <h2>Add Employee</h2>
+            <form id="employeeForm">
+                <label class="form-label">First name</label>
+                <input type="text" id="firstName" placeholder="First Name" required />
+
+                <label class="form-label">Last name</label>
+                <input type="text" id="lastName" placeholder="Last Name" required />
+                <div class="email-department-card">
+                    <div class="email-card">
+                        <label class="form-label">Email</label>
+                        <input type="email" id="email" placeholder="Email" required />
+                    </div>
+                    <div>
+                        <label class="form-label">Department</label>
+
+                        <select id="department" required class="department-input-card">
+                            <option value="">Select Department</option>
+                            <option value="HR">HR</option>
+                            <option value="IT">IT</option>
+                            <option value="Sales">Sales</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Finance">Finance</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label class="form-label">Role</label>
+                <select id="role" required class="role-input-card">
+                    <option value="">Select Role</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Developer">Developer</option>
+                    <option value="Designer">Designer</option>
+                    <option value="Sales Executive">Sales Executive</option>
+                    <option value="Accountant">Accountant</option>
+                </select>
+
+                <div class="form-submit-option-card">
+                    <button type="button" id="cancelBtn" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="form-add-btn">Add</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="employeeList" class="employee-list"></div>
+        <div class="footerContainer">
+            <p class="footer-heading">2025 Employee Directory App. All rights reserved.</p>
+        </div>
+    </div>
+    <div>
+        <div id="filterSection" class="filter-section hidden">
+            <p>Filter Employees</p>
+            <select id="filterDepartment">
+                <option value="">All Departments</option>
+                <option value="HR">HR</option>
+                <option value="IT">IT</option>
+                <option value="Sales">Sales</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Finance">Finance</option>
+            </select>
+
+            <select id="filterRole">
+                <option value="">All Roles</option>
+                <option value="Manager">Manager</option>
+                <option value="Developer">Developer</option>
+                <option value="Designer">Designer</option>
+                <option value="Sales Executive">Sales Executive</option>
+                <option value="Accountant">Accountant</option>
+            </select>
+
+            <button id="applyFilterBtn">Apply</button>
+            <button id="resetFilterBtn">Reset</button>
+        </div>
+
+    </div>
+
+    <script src="../static/js/data.js"></script>
+    <script src="../static/js/app.js"></script>
+</body>
+
+</html>
